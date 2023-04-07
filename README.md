@@ -1,20 +1,34 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Example for @angular-architects/module-federation
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+This examples loads a microfrontend into a shell:
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+![Microfrontend Loaded into Shell](./result.png)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Important Files
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Have a particular look at the following files:
+
+- ``readme.md``: Shows how to install dependencies and how to start the example
+- ``projects\mfe1\webpack.config.js``: Microfrontend config
+- ``projects\shell\webpack.config.js``: Shell config
+- ``projects\shell\src\app\app.routes.ts``: Lazy route for microfrontend
+- ``projects\shell\src\decl.d.ts``: Typing for mapped Url pointing to microfrontend
+
+## Installation and Usage
+
+- Install packages: ``yarn`` (!)*
+- Start Micro Frontend (remote): ``ng serve mfe1 -o``
+- Start Shell (host): ``ng serve shell -o``
+- Make sure ``mfe1`` is started before ``shell`` is loaded into the browser
+- Use the hyperlink ``flights`` in the ``shell`` to load `mfe1`
+
+\* Please note, you **must** use **yarn** during the beta phase of CLI 11 b/c it allows to override dependencies to force the CLI into webpack 5.
+
+## More Details on Module Federation
+
+Have a look at this [article series about Module Federation](https://www.angulararchitects.io/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/)
+
+## Angular Trainings, Workshops, and Consulting
+
+- [Angular Trainings and Workshops](https://www.angulararchitects.io/en/angular-workshops/)
+- [Angular Consulting](https://www.angulararchitects.io/en/consulting/)
