@@ -1,6 +1,5 @@
 import { WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { AuthLibService } from 'auth-lib';
 
 @Component({
   selector: 'app-home',
@@ -27,13 +26,12 @@ export class HomeComponent implements OnInit {
     elementName: 'angular1-element'
   }
 
-  constructor(private authService: AuthLibService, private cd: ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService.login(this.userName, null);
   }
 
 }
