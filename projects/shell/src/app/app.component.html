@@ -1,16 +1,66 @@
-<ul>
-    <li><img src="../assets/angular.png" width="50"></li>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/react">React</a></li>
-    <li><a routerLink="/angular1">Angular</a></li>
-    <li><a routerLink="/vue">Vue</a></li>
-    <li><a routerLink="/dashboard">Dashboard</a></li>
+<slb-navigation-framework
+  [applicationLogo]="'assets/logos/delfi.png'"
+  [applicationName]="'Plugin Store POC'"
+  [hasSidenav]="true"
+  [notifications]="true"
+  [pageTitle]="pageTitle"
+>
+  <slb-framework-toolbar>
+    <ng-content *ngTemplateOutlet="toolbar"></ng-content>
+  </slb-framework-toolbar>
 
-</ul>
+  <slb-framework-sidenav>
+    <ng-content *ngTemplateOutlet="sidenav"></ng-content>
+  </slb-framework-sidenav>
 
-<p class="version">Angular Version: {{ngVersion}}</p>
+  <slb-framework-content>
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </slb-framework-content>
 
-<router-outlet></router-outlet>
+  <slb-framework-page-header
+    *ngIf="showHeader"
+    [showBackButton]="true"
+    [pageTitle]="pageTitle"
+    [items]="secondaryLinks"
+  >
+  </slb-framework-page-header>
+</slb-navigation-framework>
 
+<ng-template #toolbar>
+    <button slb-icon-button matTooltip="Help">
+      <mat-icon svgIcon="help"></mat-icon>
+    </button>
+    <slb-notifications-panel
+      [capacity]="notificationCount"
+      [notificationItems]="notificationItems"
+      [viewAllButtonVisible]="true"
+    ></slb-notifications-panel>
+    <slb-logout [userName]="'John Doe'">
+    </slb-logout>
+</ng-template>
 
+<ng-template #sidenav>
+  <mat-nav-list class="app-sidenav">
+    <a class="dls-navigation-item" matTooltip="Home" [matTooltipPosition]="'right'" [routerLink]="['home']">
+      <mat-icon svgIcon="home"></mat-icon>
+    </a>
+    <a class="dls-navigation-item" matTooltip="Angular Plugin" [matTooltipPosition]="'right'" [routerLink]="['angular1']">
+      <mat-icon svgIcon="plug-in"></mat-icon>
+    </a>
+    <a class="dls-navigation-item" matTooltip="React Plugin" [matTooltipPosition]="'right'" [routerLink]="['react']">
+      <mat-icon svgIcon="plug-in"></mat-icon>
+    </a>
+    <a class="dls-navigation-item" matTooltip="Vue Plugin" [matTooltipPosition]="'right'" [routerLink]="['vue']">
+      <mat-icon svgIcon="plug-in"></mat-icon>
+    </a>
+    <a class="dls-navigation-item" matTooltip="Dashboard" [matTooltipPosition]="'right'" [routerLink]="['dashboard']">
+      <mat-icon svgIcon="plug-in"></mat-icon>
+    </a>
+  </mat-nav-list>
+</ng-template>
 
+<ng-template #content>
+  <p class="version">Angular Version: {{ngVersion}}</p>
+
+  <router-outlet></router-outlet>
+</ng-template>

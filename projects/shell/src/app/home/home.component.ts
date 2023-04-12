@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   events = {
-    "clicked": (event) => {
+    "clicked": (event: any) => {
       console.debug('clicked!', event);
     }
   }
