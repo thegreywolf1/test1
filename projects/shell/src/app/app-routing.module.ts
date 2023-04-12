@@ -7,9 +7,16 @@ import { startsWith, WebComponentWrapper, WebComponentWrapperOptions } from '@an
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 let URL = 'http://localhost:3000/remoteEntry.js';
+
 const APP_ROUTES: Routes = [
   {
     path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'home',
     component: HomeComponent,
     pathMatch: 'full'
   },
