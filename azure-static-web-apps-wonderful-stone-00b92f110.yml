@@ -20,6 +20,11 @@ jobs:
   steps:
   - checkout: self
     submodules: true
+  - task: CmdLine@2
+    inputs:
+      script: |
+        npm install -g webpack webpack-cli --save-dev
+
   - task: AzureStaticWebApp@0
     inputs:
       azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_STONE_00B92F110)
