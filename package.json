@@ -1,5 +1,5 @@
 {
-  "name": "mf-demo",
+  "name": "shell",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,9 +8,11 @@
     "start:angular-plugin": "ng serve angular-plugin -o --port 3000",
     "start:all": "concurrently \"npm run start:shell\" \"npm run start:angular-plugin\" ",
     "build:shell": "ng build shell",
-    "build:angular-plugin": "ng build angular-plugin --configuration production",
+    "build:angular-plugin": "cd projects/plugins/angular-plugin && npm run build",
+    "build:react-plugin": "cd projects/plugins/react-plugin && npm run build",
+    "build:vue-plugin": "cd projects/plugins/vue-plugin && npm run build",
     "serve:dist": "concurrently \"serve dist/shell -l 4200 -s\" \"serve dist/angular-plugin -l 3000 -s\" ",
-    "build": "npm run build:shell && npm run build:angular-plugin",
+    "build": "npm run build:shell && npm run build:angular-plugin && npm run build:react-plugin && npm run build:vue-plugin",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -7,7 +7,7 @@ module.exports = options => {
     output: {
       filename: 'bundle.js',
       publicPath: "auto",
-      uniqueName: "mfe4"
+      uniqueName: "react-plugin"
     },
     module: {
       rules: [
