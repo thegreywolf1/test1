@@ -9,6 +9,12 @@ trigger:
     include:
       - master
 
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
 jobs:
 - job: build_and_deploy_job
   displayName: Build and Deploy Job
