@@ -18,13 +18,12 @@ jobs:
   variables:
   - group: Azure-Static-Web-Apps-wonderful-stone-00b92f110-variable-group
   steps:
-  - checkout: self
-    submodules: true
   - task: CmdLine@2
     inputs:
-      script: |
+      script:
         npm install -g webpack webpack-cli --save-dev
-
+  - checkout: self
+    submodules: true
   - task: AzureStaticWebApp@0
     inputs:
       azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_STONE_00B92F110)
