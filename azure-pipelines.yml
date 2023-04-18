@@ -17,8 +17,8 @@ steps:
 
 # Install and Build.
 - script: |
+    yarn add -D webpack-cli
     npm install -g @angular/cli
-    npm install -g webpack webpack-cli
     npm install
     npm run build
   displayName: 'npm install and build'
