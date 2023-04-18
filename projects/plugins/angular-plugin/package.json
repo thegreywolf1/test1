@@ -1,5 +1,5 @@
 {
-  "name": "mfe2",
+  "name": "angular-plugin",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@angular-architects/module-federation": "^12.0.0",
     "@angular-architects/module-federation-runtime": "^12.0.0",
-    "@angular-architects/module-federation-tools": "0.0.6",
+    "@angular-architects/module-federation-tools": "^12.0.0",
     "@angular/animations": "12.0.3",
     "@angular/common": "12.0.3",
     "@angular/compiler": "12.0.3",
@@ -25,18 +25,18 @@
     "@angular/router": "12.0.3",
     "rxjs": "6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "0.10.2"
+    "zone.js": "0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "12.0.3",
     "@angular/cli": "12.0.3",
     "@angular/compiler-cli": "12.0.3",
-    "@types/jasmine": "3.6.0",
-    "@types/node": "^12.11.1",
+    "@types/jasmine": ">=3.8",
+    "@types/node": "18.13.0",
     "codelyzer": "^6.0.0",
-    "jasmine-core": "3.6.0",
+    "jasmine-core": ">=3.8",
     "jasmine-spec-reporter": "5.0.0",
-    "karma": "5.2.0",
+    "karma": "6.3.0",
     "karma-chrome-launcher": "3.1.0",
     "karma-coverage": "2.0.3",
     "karma-jasmine": "4.0.0",

@@ -23,7 +23,7 @@ module.exports = {
       // For hosts (please adjust)
       /*
       remotes: {
-          'mfe1': "mfe1@http://localhost:3000/remoteEntry.js" 
+          'angular-plugin': "angular-plugin@http://localhost:3000/remoteEntry.js"
       },
       */
 

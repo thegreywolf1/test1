@@ -16,7 +16,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: false
-  },    
+  },
   resolve: {
     alias: {
       ...sharedMappings.getAliases(),
@@ -27,14 +27,14 @@ module.exports = {
 
       // For hosts (please adjust)
       remotes: {
-        // "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
+        // "angular-plugin": "angular-plugin@http://localhost:3000/remoteEntry.js",
       },
 
       shared: {
         "@angular/core": { requiredVersion: '12.0.0' },
         "@angular/common": { requiredVersion: '12.0.0' },
         "@angular/router": { requiredVersion: '12.0.0' },
-        "@angular/common/http": { requiredVersion: '12.0.0' }, 
+        "@angular/common/http": { requiredVersion: '12.0.0' },
 
         // Uncomment for sharing lib of an Angular CLI or Nx workspace
         ...sharedMappings.getDescriptors()

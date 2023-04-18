@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mfe2": {
+    "angular-plugin": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,8 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/mfe2",
+						"commonChunk": false,
+            "outputPath": "dist/angular-plugin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,13 +64,13 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "mfe2:build",
+            "browserTarget": "angular-plugin:build",
             "extraWebpackConfig": "webpack.config.js",
             "port": 4202
           },
           "configurations": {
             "production": {
-              "browserTarget": "mfe2:build:production",
+              "browserTarget": "angular-plugin:build:production",
               "extraWebpackConfig": "webpack.prod.config.js"
             }
           }
@@ -77,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mfe2:build"
+            "browserTarget": "angular-plugin:build"
           }
         },
         "test": {
@@ -115,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mfe2:serve"
+            "devServerTarget": "angular-plugin:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mfe2:serve:production"
+              "devServerTarget": "angular-plugin:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "mfe2"
+  "defaultProject": "angular-plugin"
 }

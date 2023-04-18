@@ -1,1 +1,1 @@
-declare module 'mfe1/Module';
+declare module 'angular-plugin/Module';
