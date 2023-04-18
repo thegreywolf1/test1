@@ -15,7 +15,7 @@
     "build:react-plugin": "cd projects/plugins/react-plugin && npm run build",
     "build:vue-plugin": "cd projects/plugins/vue-plugin && npm run build",
     "serve:dist": "concurrently \"serve dist/shell -l 4200 -s\" \"serve dist/angular-plugin -l 3000 -s\" ",
-    "build": "npm run build:shell && npm run build:angular-plugin && npm run build:react-plugin && npm run build:vue-plugin",
+    "build": "npm run build:shell && npm run build:react-plugin && npm run build:vue-plugin",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
