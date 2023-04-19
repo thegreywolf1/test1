@@ -19,5 +19,5 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    npm run build:shell
+    npm run build
   displayName: 'npm install and build'
